@@ -17,7 +17,7 @@ div {
     writing-mode: vertical-lr;
     display:inline-block;
 }
-#input {
+.input {
     position: fixed;
     bottom: 4px;
     right: 2px;
@@ -44,12 +44,79 @@ div {
     }
 })();
 function fontChange() {
-  document.getElementById('body').style.fontFamily = document.getElementById('input').value;
+  document.getElementById('body').style.fontFamily = document.getElementById('font').value;
+}
+function sizeChange() {
+  document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
 </script>
 </head>
 <body>
 <div id="body" spellcheck="false" contenteditable="true"></div>
-<input id="input" oninput="fontChange()" spellcheck="false" autocomplete="off" placeholder="Bichimel"></input>
+<span class="input">
+<select id="font" oninput="fontChange()">
+<option value="">choose a font</option>
+<optgroup label="Serif">
+  <option value="Mongolian White">Mongolian White</option>
+  <option value="Garchag">Garchag</option>
+  <option value="Chagan">Chagan</option>
+  <option value="Syurga">Syurga</option>
+  <option value="Urga">Urga</option>
+  <option value="Menksoft2012">Menksoft2012</option>
+  <option value="Mongolian Test">Mongolian Test</option>
+</optgroup>
+<optgroup label="Sans-Serif">
+  <option value="Noto Sans Mongolian, sans-serif">Noto Sans Mongolian</option>
+  <option value="Onon Sonin Sans, sans-serif">Onon Sonin Sans</option>
+</optgroup>
+<optgroup label="Bold">
+  <option value="Menk Garqag Tig">Menk Garqag Tig</option>
+  <option value="Mongolian Art">Mongolian Art</option>
+  <option value="Mongolian Title">Mongolian Title</option>
+  <option value="MongolianScript">MongolianScript</option>
+</optgroup>
+<optgroup label="Cursive">
+  <option value="Bichimel">Bichimel</option>
+  <option value="Mongolian Writing">Mongolian Writing</option>
+  <option value="Oyun Garbiqimel Tig">Oyun Garbiqimel Tig</option>
+  <option value="Menk Mcdvnbar Tig">Menk Mcdvnbar Tig</option>
+</optgroup>
+<optgroup label="Manchu fonts">
+  <option value="XM_ZB">XM_ZhengBai</option>
+  <option value="XM_ZH">XM_ZhengHei</option>
+  <option value="XM_BH">XM_BiaoHei</option>
+  <option value="XM_GF">XM_GuFeng</option>
+  <option value="XM_AB">XM_YaBai</option>
+  <option value="XM_LY">XM_LiuYe</option>
+  <option value="XM_WJ">XM_WemJian</option>
+  <option value="XM_SK">XM_ShuKa</option>
+  <option value="XM_WQ">XM_WenQin</option>
+  <option value="XM_XS">XM_XingShu</option>
+  <option value="XM_YB">XM_YingBai</option>
+</optgroup>
+<optgroup label="Translingual">
+  <option value="Mongolian Universal White">MUW</option>
+</optgroup>
+</select>
+<select id="size" oninput="sizeChange()">
+  <option value="">size</option>
+  <option value="1.0rem">1.0</option>
+  <option value="1.1rem">1.1</option>
+  <option value="1.2rem">1.2</option>
+  <option value="1.3rem">1.3</option>
+  <option value="1.4rem">1.4</option>
+  <option value="1.5rem">1.5</option>
+  <option value="1.6rem">1.6</option>
+  <option value="1.7rem">1.7</option>
+  <option value="1.8rem">1.8</option>
+  <option value="1.9rem">1.9</option>
+  <option value="2.0rem">2.0</option>
+  <option value="2.1rem">2.1</option>
+  <option value="2.2rem">2.2</option>
+  <option value="2.3rem">2.3</option>
+  <option value="2.4rem">2.4</option>
+  <option value="2.5rem">2.5</option>
+</select>
+</span>
 </body>
 </html>
