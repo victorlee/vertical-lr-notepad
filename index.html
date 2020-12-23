@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>vertical-lr notepad</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(https://victorlee.github.io/fonts/stylesheet.css);
+div {
+    font-size: 1.8rem;
+    font-family: Garchag;
+    line-height: 1.4;
+    width: 95%;
+    height: 95%;
+    outline: none; 
+    border: none;
+    cursor: text;
+    writing-mode: vertical-lr;
+    display:inline-block;
+}
+#input {
+    position: fixed;
+    bottom: 4px;
+    right: 2px;
+    resize: none;
+}
+</style>
+<script>
+(function() {
+    function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.documentElement.scrollLeft -= (delta*50);
+        document.body.scrollLeft -= (delta*50);
+        e.preventDefault();
+    }
+    if (window.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        window.addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+        // IE 6/7/8
+        window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+})();
+function fontChange() {
+  document.getElementById('body').style.fontFamily = document.getElementById('input').value;
+}
+</script>
+</head>
+<body>
+<div id="body" spellcheck="false" contenteditable="true"></div>
+<input id="input" oninput="fontChange()" spellcheck="false" placeholder="Garchag"></input>
+</body>
+</html>
