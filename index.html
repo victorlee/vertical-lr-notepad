@@ -25,6 +25,9 @@ div {
 }
 </style>
 <script>
+window.onbeforeunload = function(event) {
+  event.returnValue = "Leave page?";
+};
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
