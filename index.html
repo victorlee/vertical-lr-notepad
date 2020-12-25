@@ -127,5 +127,13 @@ function sizeChange() {
   <option value="4.0rem">4.0</option>
 </select>
 </span>
+<script>
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
+</script>
 </body>
 </html>
