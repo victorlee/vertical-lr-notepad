@@ -6,8 +6,8 @@
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 div {
-    font-family: Mongolian White;
-    font-size: 1.0rem;
+    font-family: Menk Qimed Tig;
+    font-size: 2.6rem;
     line-height: 1.4;
     width: 95%;
     height: 95%;
@@ -54,6 +54,7 @@ function sizeChange() {
 <body>
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="input">
+  <option value="">font</option>
 <select id="font" oninput="fontChange()">
 <optgroup label="Serif">
   <option value="Mongolian White">Mongolian White</option>
@@ -104,6 +105,7 @@ function sizeChange() {
 </optgroup>
 </select>
 <select id="size" oninput="sizeChange()">
+  <option value="">size</option>
   <option value="1.0rem">1.0</option>
   <option value="1.2rem">1.2</option>
   <option value="1.4rem">1.4</option>
