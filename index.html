@@ -122,11 +122,16 @@ function fontChange() {
 function sizeChange() {
   document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
- document.getElementById('body').innerHTML = localStorage['body'];
-
- setInterval(function() {
-      localStorage['body'] = document.getElementById('body').innerHTML;
- });
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
+document.getElementById('body').innerHTML = localStorage['body'];
+setInterval(function() {
+     localStorage['body'] = document.getElementById('body').innerHTML;
+});
 </script>
 </body>
 </html>
