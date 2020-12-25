@@ -133,10 +133,10 @@ ce.addEventListener('paste', function (e) {
 })
 window.onload = function() {
 	if(localStorage.getItem('content')) {
-		document.querySelector('.body').innerHTML = localStorage.getItem('content');
+		document.querySelector('#body').innerHTML = localStorage.getItem('content');
   }
 }
-let content = document.querySelector('.body');
+let content = document.querySelector('#body');
 var add;
 function start() {
   add = setInterval(function() {
