@@ -127,7 +127,7 @@ ce.addEventListener('paste', function (e) {
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
-document.getElementById('body').innerHTML = localStorage['body'];
+document.getElementById('body').innerHTML = localStorage['body'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
