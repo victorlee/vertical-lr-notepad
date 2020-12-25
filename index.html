@@ -24,35 +24,6 @@ div {
     resize: none;
 }
 </style>
-<script>
-window.onbeforeunload = function(event) {
-  event.returnValue = "Leave page?";
-};
-(function() {
-    function scrollHorizontally(e) {
-        e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        document.documentElement.scrollLeft -= (delta*50);
-        document.body.scrollLeft -= (delta*50);
-        e.preventDefault();
-    }
-    if (window.addEventListener) {
-        // IE9, Chrome, Safari, Opera
-        window.addEventListener("mousewheel", scrollHorizontally, false);
-        // Firefox
-        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-    } else {
-        // IE 6/7/8
-        window.attachEvent("onmousewheel", scrollHorizontally);
-    }
-})();
-function fontChange() {
-  document.getElementById('body').style.fontFamily = document.getElementById('font').value;
-}
-function sizeChange() {
-  document.getElementById('body').style.fontSize = document.getElementById('size').value;
-}
-</script>
 </head>
 <body>
 <div id="body" spellcheck="false" contenteditable="true"></div>
@@ -126,14 +97,47 @@ function sizeChange() {
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
+<button onclick="openBody()">open</button>
 </span>
 <script>
+window.onbeforeunload = function(event) {
+  event.returnValue = "Leave page?";
+};
+(function() {
+    function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.documentElement.scrollLeft -= (delta*50);
+        document.body.scrollLeft -= (delta*50);
+        e.preventDefault();
+    }
+    if (window.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        window.addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+        // IE 6/7/8
+        window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+})();
+function fontChange() {
+  document.getElementById('body').style.fontFamily = document.getElementById('font').value;
+}
+function sizeChange() {
+  document.getElementById('body').style.fontSize = document.getElementById('size').value;
+}
 var ce = document.querySelector('[contenteditable]')
 ce.addEventListener('paste', function (e) {
   e.preventDefault()
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
+function openBody() {
+  var wi = window.open();
+  var html = $('#body').html();
+  $(wi.document.body).html(html);
+}
 </script>
 </body>
 </html>
