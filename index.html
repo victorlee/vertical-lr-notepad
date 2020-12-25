@@ -96,7 +96,6 @@ div {
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
-<button onclick="openBody()">open</button>
 </span>
 <script>
 window.onbeforeunload = function(event) {
@@ -132,11 +131,6 @@ ce.addEventListener('paste', function (e) {
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
-function openBody() {
-  var wi = window.open();
-  var blob = new Blob([$("#body").html()], {type: "text/html;charset=utf-8"});
-  $(wi.document.body).html(html);
-}
 </script>
 </body>
 </html>
