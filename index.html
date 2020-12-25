@@ -2,7 +2,6 @@
 <head>
 <title>vertical-lr notepad</title>
 <style>
-@import url(https://victorlee.github.io/fonts/stylesheet.css);
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 div {
@@ -135,7 +134,7 @@ ce.addEventListener('paste', function (e) {
 })
 function openBody() {
   var wi = window.open();
-  var html = $('#body').html();
+  var blob = new Blob([$("#body").html()], {type: "text/html;charset=utf-8"});
   $(wi.document.body).html(html);
 }
 </script>
