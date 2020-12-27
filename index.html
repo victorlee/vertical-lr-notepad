@@ -127,6 +127,10 @@ document.getElementById('body').innerHTML = localStorage['body'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
+var div = document.getElementById('body');
+setTimeout(function() {
+    div.focus();
+});
 </script>
 </body>
 </html>
