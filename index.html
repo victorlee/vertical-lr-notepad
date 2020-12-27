@@ -21,33 +21,6 @@ div {
     right: 4px;
     resize: none;
 }
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border: 1px solid rgba(1,1,1,0.5);
-  padding: 1px;
-  font-family: Arial;
-  font-size: 0.8rem;
-  border-radius: 3px;
-}
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgba(1,1,1,0.7);
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 1.5rem;
-  right: 0%;
-  font-size: 1.0rem;
-  width: 24rem;
-}
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 </style>
 </head>
 <body>
@@ -122,9 +95,6 @@ div {
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
-<span class="tooltip">about
-  <span class="tooltiptext">This is a notepad which allows you to type traditional Mongolian script. You can select text size and Mongolian fonts through the selection panel, and can save contents through browser's localStorage data even after the page is closed.</span>
-</span>
 <script>
 (function() {
     function scrollHorizontally(e) {
