@@ -28,6 +28,7 @@ div {
   padding: 2px;
   font-family: Arial;
   font-size: 0.8rem;
+  border-radius: 3px;
 }
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -42,6 +43,7 @@ div {
   bottom: 1.5rem;
   right: 0%;
   font-size: 1.0rem;
+  width: 24rem;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -121,8 +123,7 @@ div {
   <option value="4.0rem">4.0</option>
 </select>
 <span class="tooltip">about
-  <span class="tooltiptext">Tooltip text</span>
-</span>
+  <span class="tooltiptext">This is a notepad which allows users typing traditional Mongolian script. As &lt;textarea&gt; does not allow vertical-lr style writing mode, using contenteditable &lt;div&gt; is inevitable. Users can select text size and fonts through the selection panel, and can save contents through browser's localStorage data even after the page is closed.</span>
 </span>
 <script>
 (function() {
@@ -134,12 +135,9 @@ div {
         e.preventDefault();
     }
     if (window.addEventListener) {
-        // IE9, Chrome, Safari, Opera
         window.addEventListener("mousewheel", scrollHorizontally, false);
-        // Firefox
         window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
     } else {
-        // IE 6/7/8
         window.attachEvent("onmousewheel", scrollHorizontally);
     }
 })();
