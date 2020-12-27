@@ -129,7 +129,7 @@ setInterval(function() {
 });
 var div = document.getElementById('body');
 setTimeout(function() {
-    div.focus();
+    this.selectionStart = this.selectionEnd = this.value.length;
 });
 </script>
 </body>
