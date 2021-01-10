@@ -6,7 +6,7 @@
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 div {
     font-family: Mongolian White;
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     line-height: 1.4;
     height: 95%;
     min-width: 100%;
@@ -14,7 +14,7 @@ div {
     border: none;
     cursor: text;
     writing-mode: vertical-lr;
-    display:inline-block;
+    display: inline-block;
 }
 .input {
     position: fixed;
@@ -28,7 +28,6 @@ div {
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="input">
 <select id="font" oninput="fontChange()">
-  <option value="">font</option>
 <optgroup label="Serif">
   <option value="Mongolian White">Mongolian White</option>
   <option value="Chagan">Chagan</option>
@@ -78,10 +77,6 @@ div {
 </optgroup>
 </select>
 <select id="size" oninput="sizeChange()">
-  <option value="">size</option>
-  <option value="1.0rem">1.0</option>
-  <option value="1.2rem">1.2</option>
-  <option value="1.4rem">1.4</option>
   <option value="1.6rem">1.6</option>
   <option value="1.8rem">1.8</option>
   <option value="2.0rem">2.0</option>
