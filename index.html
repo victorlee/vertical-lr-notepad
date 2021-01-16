@@ -1,6 +1,133 @@
 <html>
 <head>
 <title>Vertical-LR notepad</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+setInterval(function change() {
+var txta = window.getSelection();
+document.getElementById('loop').innerHTML = txta;
+$('#loop').each(function (index) {
+    var characters = $(this).text().split("");
+    $this = $(this);
+    $this.empty();
+    $.each(characters, function (i, el) {
+    $this.append("<span class='span'>" + el + "</span>");
+    });
+});
+var x = document.getElementsByClassName('span');
+var i;
+var langsel = document.getElementById("lang");
+for (i = 0; i < x.length; i++) {
+if (x[i].innerHTML == 'ᠠ') {x[i].innerHTML = "a";}
+if (x[i].innerHTML == 'ᠡ') {x[i].innerHTML = "e";}
+if (x[i].innerHTML == 'ᠢ') {x[i].innerHTML = "i";}
+if (x[i].innerHTML == 'ᠣ') {x[i].innerHTML = "o";}
+if (x[i].innerHTML == 'ᠤ') {x[i].innerHTML = "u";}
+if (x[i].innerHTML == 'ᠥ') {x[i].innerHTML = "ö";}
+if (x[i].innerHTML == 'ᠦ') {x[i].innerHTML = "ü";}
+if (x[i].innerHTML == 'ᠧ') {x[i].innerHTML = "ē";}
+if (x[i].innerHTML == 'ᠨ') {x[i].innerHTML = "n";}
+if (x[i].innerHTML == 'ᠩ') {x[i].innerHTML = "ng";}
+if (x[i].innerHTML == 'ᠫ') {x[i].innerHTML = "p";}
+if (x[i].innerHTML == 'ᠪ') {x[i].innerHTML = "b";}
+if (x[i].innerHTML == 'ᠬ') {x[i].innerHTML = "q";}
+if (x[i].innerHTML == 'ᠭ') {x[i].innerHTML = "γ";}
+if (x[i].innerHTML == 'ᠮ') {x[i].innerHTML = "m";}
+if (x[i].innerHTML == 'ᠯ') {x[i].innerHTML = "l";}
+if (x[i].innerHTML == 'ᠰ') {x[i].innerHTML = "s";}
+if (x[i].innerHTML == 'ᠱ') {x[i].innerHTML = "š";}
+if (x[i].innerHTML == 'ᠲ') {x[i].innerHTML = "t";}
+if (x[i].innerHTML == 'ᠳ') {x[i].innerHTML = "d";}
+if (x[i].innerHTML == 'ᠴ') {
+if (langsel.value == 'mongol'){
+ {x[i].innerHTML = "č";}
+}
+if (langsel.value == 'manchu'){
+ {x[i].innerHTML = "c";}
+}
+}
+if (x[i].innerHTML == 'ᠵ') {
+if (langsel.value == 'mongol'){
+ {x[i].innerHTML = "ǰ";}
+}
+if (langsel.value == 'manchu'){
+ {x[i].innerHTML = "j";}
+}
+}
+if (x[i].innerHTML == 'ᠶ') {x[i].innerHTML = "y";}
+if (x[i].innerHTML == 'ᠷ') {x[i].innerHTML = "r";}
+if (x[i].innerHTML == 'ᠸ') {x[i].innerHTML = "w";}
+if (x[i].innerHTML == 'ᠹ') {x[i].innerHTML = "f";}
+if (x[i].innerHTML == 'ᠺ') {
+if (langsel.value == 'mongol'){
+ {x[i].innerHTML = "g";}
+}
+if (langsel.value == 'manchu'){
+ {x[i].innerHTML = "k'";}
+}
+}
+if (x[i].innerHTML == 'ᠻ') {x[i].innerHTML = "k";}
+if (x[i].innerHTML == 'ᠼ') {x[i].innerHTML = "c";}
+if (x[i].innerHTML == 'ᠽ') {x[i].innerHTML = "z";}
+if (x[i].innerHTML == 'ᠾ') {x[i].innerHTML = "h";}
+if (x[i].innerHTML == 'ᠿ') {x[i].innerHTML = "ž";}
+if (x[i].innerHTML == 'ᡀ') {x[i].innerHTML = "lh";}
+if (x[i].innerHTML == 'ᡁ') {x[i].innerHTML = "zh";}
+if (x[i].innerHTML == 'ᡂ') {x[i].innerHTML = "ch";}
+
+if (x[i].innerHTML == 'ᡝ') {x[i].innerHTML = "e";}
+if (x[i].innerHTML == 'ᡳ') {x[i].innerHTML = "i";}
+if (x[i].innerHTML == 'ᡟ') {x[i].innerHTML = "y";}
+if (x[i].innerHTML == 'ᡠ') {x[i].innerHTML = "u";}
+if (x[i].innerHTML == 'ᡡ') {x[i].innerHTML = "ū";}
+if (x[i].innerHTML == 'ᡴ') {x[i].innerHTML = "k";}
+if (x[i].innerHTML == 'ᡤ') {x[i].innerHTML = "g";}
+if (x[i].innerHTML == 'ᡥ') {x[i].innerHTML = "h";}
+if (x[i].innerHTML == 'ᡦ') {x[i].innerHTML = "p";}
+if (x[i].innerHTML == 'ᡧ') {x[i].innerHTML = "š";}
+if (x[i].innerHTML == 'ᡨ') {x[i].innerHTML = "t";}
+if (x[i].innerHTML == 'ᡩ') {x[i].innerHTML = "d";}
+if (x[i].innerHTML == 'ᡶ') {x[i].innerHTML = "f";}
+if (x[i].innerHTML == 'ᡬ') {x[i].innerHTML = "g'";}
+if (x[i].innerHTML == 'ᡭ') {x[i].innerHTML = "h'";}
+if (x[i].innerHTML == 'ᡮ') {x[i].innerHTML = "ts'";}
+if (x[i].innerHTML == 'ᡯ') {x[i].innerHTML = "dz";}
+if (x[i].innerHTML == 'ᡰ') {x[i].innerHTML = "ž";}
+if (x[i].innerHTML == 'ᡱ') {x[i].innerHTML = "c'y";}
+if (x[i].innerHTML == 'ᡷ') {x[i].innerHTML = "j'y";}
+
+if (x[i].innerHTML == '᠐') {x[i].innerHTML = "0";}
+if (x[i].innerHTML == '᠑') {x[i].innerHTML = "1";}
+if (x[i].innerHTML == '᠒') {x[i].innerHTML = "2";}
+if (x[i].innerHTML == '᠓') {x[i].innerHTML = "3";}
+if (x[i].innerHTML == '᠔') {x[i].innerHTML = "4";}
+if (x[i].innerHTML == '᠕') {x[i].innerHTML = "5";}
+if (x[i].innerHTML == '᠖') {x[i].innerHTML = "6";}
+if (x[i].innerHTML == '᠗') {x[i].innerHTML = "7";}
+if (x[i].innerHTML == '᠘') {x[i].innerHTML = "8";}
+if (x[i].innerHTML == '᠙') {x[i].innerHTML = "9";}
+if (x[i].innerHTML == '᠁') {x[i].innerHTML = "...";}
+if (x[i].innerHTML == '᠂') {x[i].innerHTML = ",";}
+if (x[i].innerHTML == '᠃') {x[i].innerHTML = ".";}
+if (x[i].innerHTML == '᠄') {x[i].innerHTML = "<span class='highlight'>\u003a</span>";}
+if (x[i].innerHTML == '᠊') {x[i].innerHTML = "<span class='highlight'>🅝</span>";}
+if (x[i].innerHTML == '\u180b') {x[i].innerHTML = "<span class='highlight'>¹</span>";}
+if (x[i].innerHTML == '\u180c') {x[i].innerHTML = "<span class='highlight'>²</span>";}
+if (x[i].innerHTML == '\u180d') {x[i].innerHTML = "<span class='highlight'>³</span>";}
+if (x[i].innerHTML == '\u180e') {x[i].innerHTML = "<span class='highlight'>_</span>";}
+if (x[i].innerHTML == '\u200c') {x[i].innerHTML = "<span class='highlight'>^</span>";}
+if (x[i].innerHTML == '\u200d') {x[i].innerHTML = "<span class='highlight'>*</span>";}
+if (x[i].innerHTML == '\u202f') {x[i].innerHTML = "<span class='highlight'>-</span>";}
+if (x[i].innerHTML == '︕') {x[i].innerHTML = "!";}
+if (x[i].innerHTML == '︖') {x[i].innerHTML = "?";}
+if (x[i].innerHTML == '︽') {x[i].innerHTML = "《";}
+if (x[i].innerHTML == '︾') {x[i].innerHTML = "》";}
+
+if (x[i].innerHTML == '᠈') {x[i].innerHTML = ",";}
+if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
+}
+});
+</script>
 <style>
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
@@ -22,11 +149,26 @@ div {
     right: 4px;
     resize: none;
 }
+#loop {
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+    resize: none;
+    max-width: 50em;
+    font-size: 1.3em; 
+    font-family: monospace;
+}
+.highlight {color: red;}
 </style>
 </head>
 <body>
 <div id="body" spellcheck="false" contenteditable="true"></div>
+<span id="loop"></span>
 <span class="input">
+<select id="lang">
+  <option value="mongol">Mongol</option>
+  <option value="manchu">Manchu</option>
+</select>
 <select id="font" oninput="fontChange()">
 <optgroup label="Serif">
   <option value="Mongolian White">Mongolian White</option>
@@ -97,6 +239,7 @@ div {
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
+</span>
 <script>
 (function() {
     function scrollHorizontally(e) {
