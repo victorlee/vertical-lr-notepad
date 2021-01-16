@@ -164,7 +164,7 @@ background: #000;
     max-height: 3rem;
     font-size: 1.3em; 
     font-family: Arial;
-    overflow-y: auto;
+    overflow: auto;
     background: rgba(255,255,255,0.8);
 }
 .highlight {color: red;}
@@ -176,6 +176,7 @@ background: #000;
 <span id="loop"></span>
 </span>
 <span class="input">
+<button onclick="copyloop()">copy</button>
 <select id="lang" oninput="fontSettings()">
   <option value="mongol">Mongol</option>
   <option value="manchu">Manchu</option>
@@ -305,6 +306,14 @@ function fontSettings() {
         document.getElementById('font').value = 'XM_ZH';
     }
 };
+function copyloop() {
+var range = document.createRange();
+range.selectNode(document.getElementById("loop"));
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(range);
+document.execCommand("copy");
+window.getSelection().removeAllRanges();
+}
 </script>
 </body>
 </html>
