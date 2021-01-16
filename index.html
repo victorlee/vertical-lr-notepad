@@ -152,29 +152,35 @@ div {
 }
 #loop {
     position: fixed;
-    bottom: 4px;
+    bottom: 0px;
+    padding-bottom:1px;
     left: 4px;
     resize: none;
     max-width: 45em;
+    max-height: 3rem;
     font-size: 1.3em; 
     font-family: Arial;
     overflow-y: auto;
     background: #FFF;
+    cursor: copy;
 }
 .highlight {color: red;}
 </style>
 </head>
 <body>
 <div id="body" spellcheck="false" contenteditable="true"></div>
+<span class="loop">
 <span id="loop"></span>
+<button>copy</button>
+</span>
 <span class="input">
 <select id="lang" oninput="fontSettings()">
   <option value="mongol">Mongol</option>
   <option value="manchu">Manchu</option>
 </select>
 <select id="font" oninput="fontChange()">
-<optgroup label="Serif">
-  <option value="Mongolian White">Mongolian White</option>
+<optgroup label="Serif" id="mongolfont1">
+  <option value="Mongolian White" id="mw">Mongolian White</option>
   <option value="Chagan">Chagan</option>
   <option value="Garchag">Garchag</option>
   <option value="Syurga">Syurga</option>
@@ -188,11 +194,11 @@ div {
   <option value="Menk Hvlvsvn Tig">Menk Hvlvsvn Tig</option>
   <option value="Menk Qagan Tig">Menk Qagan Tig</option>
 </optgroup>
-<optgroup label="Sans-Serif">
+<optgroup label="Sans-Serif" id="mongolfont2">
   <option value="Noto Sans Mongolian, sans-serif">Noto Sans Mongolian</option>
   <option value="Onon Sonin Sans, sans-serif">Onon Sonin Sans</option>
 </optgroup>
-<optgroup label="Cursive">
+<optgroup label="Cursive" id="mongolfont3">
   <option value="Mongolian Writing">Mongolian Writing</option>
   <option value="Bichimel">Bichimel</option>
   <option value="Menk Hawang Tig">Menk Hawang Tig</option>
@@ -202,15 +208,15 @@ div {
   <option value="Menk Ujug Tig">Menk Ujug Tig</option>
   <option value="Classical Mongolian Dashtseden">Classical Mongolian Dashtseden</option>
 </optgroup>
-<optgroup label="Bold">
+<optgroup label="Bold" id="mongolfont4">
   <option value="Mongolian Art">Mongolian Art</option>
   <option value="Mongolian Title">Mongolian Title</option>
   <option value="MongolianScript">MongolianScript</option>
   <option value="Menk Garqag Tig">Menk Garqag Tig</option>
   <option value="Menk Sidam Tig">Menk Sidam Tig</option>
 </optgroup>
-<optgroup label="Manchu">
-  <option value="XM_ZH">XM_ZhengHei</option>
+<optgroup label="Manchu" id="manchufont" style="display:none">
+  <option value="XM_ZH" id="zh">XM_ZhengHei</option>
   <option value="XM_ZB">XM_ZhengBai</option>
   <option value="XM_BH">XM_BiaoHei</option>
   <option value="XM_GF">XM_GuFeng</option>
@@ -221,10 +227,6 @@ div {
   <option value="XM_WQ">XM_WenQin</option>
   <option value="XM_XS">XM_XingShu</option>
   <option value="XM_YB">XM_YingBai</option>
-</optgroup>
-<optgroup label="Translingual">
-  <option value="serif">default webfont</option>
-  <option value="Mongolian Universal White">Mongolian Universal White</option>
 </optgroup>
 </select>
 <select id="size" oninput="sizeChange()">
@@ -280,11 +282,22 @@ setTimeout(function() {
     div.focus();
 });
 function fontSettings() {
-    if (document.getElementById('lang').value == 'mongol') {
+    if (document.getElementById('lang').value === 'mongol') {
         document.getElementById('body').style.fontFamily = 'Mongolian White';
-    }
-    if (document.getElementById('lang').value == 'manchu') {
+        document.getElementById('mongolfont1').style.display = 'block';
+        document.getElementById('mongolfont2').style.display = 'block';
+        document.getElementById('mongolfont3').style.display = 'block';
+        document.getElementById('mongolfont4').style.display = 'block';
+        document.getElementById('manchufont').style.display = 'none';
+        document.getElementById('font').value = 'Mongolian White';
+    } else if (document.getElementById('lang').value === 'manchu') {
         document.getElementById('body').style.fontFamily = 'XM_ZH';
+        document.getElementById('mongolfont1').style.display = 'none';
+        document.getElementById('mongolfont2').style.display = 'none';
+        document.getElementById('mongolfont3').style.display = 'none';
+        document.getElementById('mongolfont4').style.display = 'none';
+        document.getElementById('manchufont').style.display = 'block';
+        document.getElementById('font').value = 'XM_ZH';
     }
 };
 </script>
