@@ -127,7 +127,7 @@ if (x[i].innerHTML == '︾') {x[i].innerHTML = "》";}
 if (x[i].innerHTML == '᠈') {x[i].innerHTML = ",";}
 if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 }
-});
+}, 50);
 </script>
 <style>
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
@@ -156,13 +156,12 @@ div {
     padding-bottom:1px;
     left: 4px;
     resize: none;
-    max-width: 45em;
+    max-width: 64%;
     max-height: 3rem;
     font-size: 1.3em; 
     font-family: Arial;
     overflow-y: auto;
     background: #FFF;
-    cursor: copy;
 }
 .highlight {color: red;}
 </style>
@@ -171,7 +170,6 @@ div {
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="loop">
 <span id="loop"></span>
-<button>copy</button>
 </span>
 <span class="input">
 <select id="lang" oninput="fontSettings()">
