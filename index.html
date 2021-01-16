@@ -127,7 +127,7 @@ if (x[i].innerHTML == '︾') {x[i].innerHTML = "》";}
 if (x[i].innerHTML == '᠈') {x[i].innerHTML = ",";}
 if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 }
-});
+}, 50);
 </script>
 <style>
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
@@ -280,7 +280,7 @@ ce.addEventListener('paste', function (e) {
   document.execCommand('insertText', false, text)
 })
 document.getElementById('body').innerHTML = localStorage['body'] || '';
-$(document).ready(function() {
+setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
 var div = document.getElementById('body');
