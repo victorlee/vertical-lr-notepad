@@ -168,7 +168,7 @@ div {
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span id="loop"></span>
 <span class="input">
-<select id="lang">
+<select id="lang" oninput="fontSettings()">
   <option value="mongol">Mongol</option>
   <option value="manchu">Manchu</option>
 </select>
@@ -210,8 +210,8 @@ div {
   <option value="Menk Sidam Tig">Menk Sidam Tig</option>
 </optgroup>
 <optgroup label="Manchu">
-  <option value="XM_ZB">XM_ZhengBai</option>
   <option value="XM_ZH">XM_ZhengHei</option>
+  <option value="XM_ZB">XM_ZhengBai</option>
   <option value="XM_BH">XM_BiaoHei</option>
   <option value="XM_GF">XM_GuFeng</option>
   <option value="XM_AB">XM_YaBai</option>
@@ -279,6 +279,14 @@ var div = document.getElementById('body');
 setTimeout(function() {
     div.focus();
 });
+function fontSettings() {
+    if (document.getElementById('lang').value == 'mongolian') {
+        document.getElementById('body').style.fontFamily = 'Mongolian White';
+    }
+    if (document.getElementById('lang').value == 'manchu') {
+        document.getElementById('body').style.fontFamily = 'XM_ZB';
+    }
+};
 </script>
 </body>
 </html>
