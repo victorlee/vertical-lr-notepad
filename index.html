@@ -282,6 +282,18 @@ document.getElementById('body').innerHTML = localStorage['body'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
+document.getElementById('lang').value = localStorage['lang'] || 'mongol';
+setInterval(function() {
+     localStorage['lang'] = document.getElementById('lang').value;
+});
+document.getElementById('font').value = localStorage['font'] || 'Mongolian White';
+setInterval(function() {
+     localStorage['font'] = document.getElementById('font').value;
+});
+document.getElementById('size').value = localStorage['size'] || '1.8rem';
+setInterval(function() {
+     localStorage['size'] = document.getElementById('size').value;
+});
 var div = document.getElementById('body');
 setTimeout(function() {
     div.focus();
