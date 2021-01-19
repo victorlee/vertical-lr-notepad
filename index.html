@@ -178,7 +178,7 @@ background: #000;
 <span class="input">
 <button onclick="copyloop()">copy translit.</button>
 <select id="lang" oninput="fontSettings()">
-  <option value="mongol">Mongol</option>
+  <option value="mongol">Mongolian</option>
   <option value="manchu">Manchu</option>
 </select>
 <select id="font" oninput="fontChange()">
@@ -312,6 +312,17 @@ function fontSettings() {
         document.getElementById('font').value = 'XM_ZH';
     }
 };
+var rtlChar = /[\u185D-\u1877]/mg;
+$(document).ready(function(){
+    $('#body').keyup(function(){
+        var isRTL = this.innerHTML.match(rtlChar);
+        if(isRTL !== null) {
+            if(document.getElementById('lang').value = 'mongol') {
+                alert("Please change language from 'Mongolian' to 'Manchu' at the bottom right selection.");
+             }
+         }
+    });
+});
 function copyloop() {
 var range = document.createRange();
 range.selectNode(document.getElementById("loop"));
