@@ -133,8 +133,6 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 div {
-    font-family: Mongolian White;
-    font-size: 1.6rem;
     line-height: 1.4;
     height: 95%;
     min-width: 100%;
@@ -285,6 +283,14 @@ setInterval(function() {
 document.getElementById('lang').value = localStorage['lang'] || 'mongol';
 setInterval(function() {
      localStorage['lang'] = document.getElementById('lang').value;
+});
+document.getElementById('div').style.fontFamily = localStorage['fontvalue'] || 'Mongolian White';
+setInterval(function() {
+     localStorage['fontvalue'] = document.getElementById('div').style.fontFamily;
+});
+document.getElementById('div').style.fontSize = localStorage['sizevalue'] || '1.8rem';
+setInterval(function() {
+     localStorage['sizevalue'] = document.getElementById('div').style.fontSize;
 });
 document.getElementById('font').value = localStorage['font'] || 'Mongolian White';
 setInterval(function() {
