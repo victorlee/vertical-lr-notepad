@@ -256,7 +256,7 @@ $(document).ready(function(){
     $('#body').keyup(function(){
         var isMan = this.innerHTML.match(manChar);
         if(isMan !== null) {
-            if(document.getElementById('lang').value = 'mongol') {
+            if(document.getElementById('lang').value == 'mongol') {
                 alert("Please change the language setting from 'Mongolian' to 'Manchu'.");
              }
          }
