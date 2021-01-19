@@ -251,6 +251,17 @@ background: #000;
 </select>
 </span>
 <script>
+var manChar = /[\u185D-\u1877]/mg;
+$(document).ready(function(){
+    $('#body').keyup(function(){
+        var isMan = this.innerHTML.match(manChar);
+        if(isMan !== null) {
+            if(document.getElementById('lang').value = 'mongol') {
+                alert("Please change the language setting from 'Mongolian' to 'Manchu'.");
+             }
+         }
+    });
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
@@ -312,17 +323,6 @@ function fontSettings() {
         document.getElementById('font').value = 'XM_ZH';
     }
 };
-var manChar = /[\u185D-\u1877]/mg;
-$(document).ready(function(){
-    $('#body').keyup(function(){
-        var isMan = this.innerHTML.match(manChar);
-        if(isMan !== null) {
-            if(document.getElementById('lang').value = 'mongol') {
-                alert("Please change the language setting from 'Mongolian' to 'Manchu'.");
-             }
-         }
-    });
-});
 function copyloop() {
 var range = document.createRange();
 range.selectNode(document.getElementById("loop"));
