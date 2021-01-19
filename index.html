@@ -251,6 +251,10 @@ background: #aecbfa;
 </select>
 </span>
 <script>
+var div = document.getElementById('body');
+setTimeout(function() {
+    div.focus();
+});
 var manChar = /[\u185D-\u1877]/mg;
 $(document).ready(function(){
     $('#body').keyup(function(){
@@ -311,10 +315,6 @@ function onload() {
   click();
 }
 window.onload = onload();
-var div = document.getElementById('body');
-setTimeout(function() {
-    div.focus();
-});
 function fontSettings() {
     if (document.getElementById('lang').value === 'mongol') {
         document.getElementById('body').style.fontFamily = 'Mongolian White';
