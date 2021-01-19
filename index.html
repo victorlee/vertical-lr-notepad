@@ -257,7 +257,7 @@ $(document).ready(function(){
         var isMan = this.innerHTML.match(manChar);
         if(isMan !== null) {
             if(document.getElementById('lang').value == 'mongol') {
-                alert("Please change the language setting from 'Mongolian' to 'Manchu'.");
+                alert("Current language mode is 'Mongolian', you have entered Manchu script.");
              }
          }
     });
@@ -268,7 +268,7 @@ $(document).ready(function(){
         var isMan = this.innerHTML.match(monChar);
         if(isMan !== null) {
             if(document.getElementById('lang').value == 'manchu') {
-                alert("Please change the language setting from 'Manchu' to 'Mongolian'.");
+                alert("Current language mode is 'Manchu', you have entered Mongolian script.");
              }
          }
     });
