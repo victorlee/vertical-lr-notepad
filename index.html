@@ -280,26 +280,13 @@ document.getElementById('body').innerHTML = localStorage['body'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
-document.getElementById('lang').value = localStorage['lang'] || 'mongol';
-setInterval(function() {
-     localStorage['lang'] = document.getElementById('lang').value;
-});
-document.getElementById('div').style.fontFamily = localStorage['fontvalue'] || 'Mongolian White';
-setInterval(function() {
-     localStorage['fontvalue'] = document.getElementById('div').style.fontFamily;
-});
-document.getElementById('div').style.fontSize = localStorage['sizevalue'] || '1.8rem';
-setInterval(function() {
-     localStorage['sizevalue'] = document.getElementById('div').style.fontSize;
-});
-document.getElementById('font').value = localStorage['font'] || 'Mongolian White';
-setInterval(function() {
-     localStorage['font'] = document.getElementById('font').value;
-});
-document.getElementById('size').value = localStorage['size'] || '1.8rem';
-setInterval(function() {
-     localStorage['size'] = document.getElementById('size').value;
-});
+function onload() {
+  document.getElementById("lang").value = 'mongol';
+  document.getElementById("font").value = 'Mongolian White';
+  document.getElementById("size").value = '1.8rem';
+  click();
+}
+window.onload = onload();
 var div = document.getElementById('body');
 setTimeout(function() {
     div.focus();
