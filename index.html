@@ -312,11 +312,11 @@ function fontSettings() {
         document.getElementById('font').value = 'XM_ZH';
     }
 };
-var rtlChar = /[\u185D-\u1877]/mg;
+var manChar = /[\u185D-\u1877]/mg;
 $(document).ready(function(){
     $('#body').keyup(function(){
-        var isRTL = this.innerHTML.match(rtlChar);
-        if(isRTL !== null) {
+        var isMan = this.innerHTML.match(manChar);
+        if(isMan !== null) {
             if(document.getElementById('lang').value = 'mongol') {
                 alert("Please change the language setting from 'Mongolian' to 'Manchu'.");
              }
