@@ -311,9 +311,9 @@ function onload() {
   click();
 }
 window.onload = onload();
+var mongolfonts = document.getElementById("mongolfont" + i);
 function fontSettings() {
     for(var i=1; i<=4; i++){
-        var mongolfonts = document.getElementById("mongolfont" + i);
         if (document.getElementById('lang').value === 'mongol') {
             document.getElementById('body').style.fontFamily = 'Mongolian White';
             mongolfonts.style.display = 'block';
