@@ -132,6 +132,30 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 <style>
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
+#popup {
+  position:fixed;
+  width:15rem;
+  height:5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding:1rem;
+  border:5px solid #ccc;
+  z-index:1;
+  margin: 10% auto;
+  left:0;
+  right:0;
+  text-align:center;
+  font-size: 1.4rem;
+  font-family: arial;
+  line-height: 1.8;
+}
+#popup>button {
+  font-size: 1.2rem;
+  font-family: arial;
+  background-color: #eef;
+}
+#popup>button:hover {
+  background-color: #dde;
+}
 div {
     line-height: 1.4;
     height: 95%;
@@ -171,6 +195,11 @@ background: #aecbfa;
 </style>
 </head>
 <body>
+<span id="popup">
+language:<br>
+<button onclick="selectmong()">Mongolian</button>
+<button onclick="selectman()">Manchu</button>
+</span>
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="loop">
 <span id="loop"></span>
@@ -251,6 +280,15 @@ background: #aecbfa;
 </select>
 </span>
 <script>
+var popup = document.getElementById('popup');
+function selectmong() {
+  popup.style.display = 'none';
+}
+function selectman() {
+  popup.style.display = 'none';
+  document.getElementById("lang").value = 'manchu';
+  fontSettings();
+}
 var manChar = /[\u185D-\u1877]/mg;
 $(document).ready(function(){
     $('#body').keyup(function(){
