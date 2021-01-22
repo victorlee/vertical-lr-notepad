@@ -312,22 +312,19 @@ function onload() {
 }
 window.onload = onload();
 function fontSettings() {
-    if (document.getElementById('lang').value === 'mongol') {
-        document.getElementById('body').style.fontFamily = 'Mongolian White';
-        document.getElementById('mongolfont1').style.display = 'block';
-        document.getElementById('mongolfont2').style.display = 'block';
-        document.getElementById('mongolfont3').style.display = 'block';
-        document.getElementById('mongolfont4').style.display = 'block';
-        document.getElementById('manchufont').style.display = 'none';
-        document.getElementById('font').value = 'Mongolian White';
-    } else if (document.getElementById('lang').value === 'manchu') {
-        document.getElementById('body').style.fontFamily = 'XM_ZH';
-        document.getElementById('mongolfont1').style.display = 'none';
-        document.getElementById('mongolfont2').style.display = 'none';
-        document.getElementById('mongolfont3').style.display = 'none';
-        document.getElementById('mongolfont4').style.display = 'none';
-        document.getElementById('manchufont').style.display = 'block';
-        document.getElementById('font').value = 'XM_ZH';
+    for(var i=1; i<=4; i++){
+        var mongolfonts = document.getElementById("mongolfont" + i);
+        if (document.getElementById('lang').value === 'mongol') {
+            document.getElementById('body').style.fontFamily = 'Mongolian White';
+            mongolfonts.style.display = 'block';
+            document.getElementById('manchufont').style.display = 'none';
+            document.getElementById('font').value = 'Mongolian White';
+        } else if (document.getElementById('lang').value === 'manchu') {
+            document.getElementById('body').style.fontFamily = 'XM_ZH';
+            mongolfonts.style.display = 'none';
+            document.getElementById('manchufont').style.display = 'block';
+            document.getElementById('font').value = 'XM_ZH';
+        }
     }
 };
 function copyloop() {
