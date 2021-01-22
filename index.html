@@ -149,7 +149,7 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
   height:5rem;
   background-color: #fff;
   padding:1rem;
-  border:5px solid #ccc;
+  border:5px solid #888;
   margin: 10% auto;
   left:0;
   right:0;
@@ -159,9 +159,10 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
   line-height: 1.8;
 }
 .popup>button {
-  font-size: 1.2rem;
   font-family: arial;
   background-color: #eef;
+  height: 2rem;
+  border: solid 2px #aaa;
 }
 .popup>button:hover {
   background-color: #dde;
@@ -196,7 +197,6 @@ background: #ddd;
     max-width: 65%;
     max-height: 4.5rem;
     font-size: 1.3em; 
-    font-family: Arial;
     overflow: auto;
     background: rgba(255,255,255,0.8);
 }
@@ -207,8 +207,8 @@ background: #ddd;
 <span id="popup">
   <span class="popup">
     language:<br>
-    <button onclick="selectmong()">Mongolian</button>
-    <button onclick="selectman()">Manchu</button>
+    <button onclick="selectmong()" style="font-family:Menk Garqag Tig;font-size: 1.5rem;">ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ</button>
+    <button onclick="selectman()" style="font-family:XM_BH;font-size: 1.3rem;">ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ</button>
   </span>
 </span>
 <div id="body" spellcheck="false" contenteditable="true"></div>
