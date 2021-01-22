@@ -134,12 +134,22 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
 #popup {
   position:fixed;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background:rgba(240,240,240,0.5);
+  z-index:1;
+}
+.popup {
+  position:fixed;
   width:15rem;
   height:5rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #fff;
   padding:1rem;
   border:5px solid #ccc;
-  z-index:1;
   margin: 10% auto;
   left:0;
   right:0;
@@ -148,12 +158,12 @@ if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
   font-family: arial;
   line-height: 1.8;
 }
-#popup>button {
+.popup>button {
   font-size: 1.2rem;
   font-family: arial;
   background-color: #eef;
 }
-#popup>button:hover {
+.popup>button:hover {
   background-color: #dde;
 }
 div {
@@ -165,12 +175,11 @@ div {
     cursor: text;
     writing-mode: vertical-lr;
     display: inline-block;
-    font-family: Mongolian White;
     font-size: 2.0rem
 }
 ::selection {
 color: #000;
-background: #aecbfa;
+background: #ddd;
 }
 .input {
     position: fixed;
@@ -196,9 +205,11 @@ background: #aecbfa;
 </head>
 <body>
 <span id="popup">
-language:<br>
-<button onclick="selectmong()">Mongolian</button>
-<button onclick="selectman()">Manchu</button>
+  <span class="popup">
+    language:<br>
+    <button onclick="selectmong()">Mongolian</button>
+    <button onclick="selectman()">Manchu</button>
+  </span>
 </span>
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="loop">
@@ -282,7 +293,9 @@ language:<br>
 <script>
 var popup = document.getElementById('popup');
 function selectmong() {
+  document.getElementById("lang").value = 'mongol';
   popup.style.display = 'none';
+  fontSettings();
 }
 function selectman() {
   popup.style.display = 'none';
@@ -343,10 +356,7 @@ setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
 function onload() {
-  document.getElementById("lang").value = 'mongol';
-  document.getElementById("font").value = 'Mongolian White';
   document.getElementById("size").value = '2.0rem';
-  click();
 }
 window.onload = onload();
 function fontSettings() {
