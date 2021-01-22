@@ -277,7 +277,7 @@ background: #ddd;
   <option value="1.4rem">1.4</option>
   <option value="1.6rem">1.6</option>
   <option value="1.8rem">1.8</option>
-  <option value="2.0rem">2.0</option>
+  <option value="2.0rem" selected="selected">2.0</option>
   <option value="2.2rem">2.2</option>
   <option value="2.4rem">2.4</option>
   <option value="2.6rem">2.6</option>
@@ -355,10 +355,6 @@ document.getElementById('body').innerHTML = localStorage['body'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
-function onload() {
-  document.getElementById("size").value = '2.0rem';
-}
-window.onload = onload();
 function fontSettings() {
     for(var i=1; i<=4; i++){
         var mongolfonts = document.getElementById("mongolfont" + i);
