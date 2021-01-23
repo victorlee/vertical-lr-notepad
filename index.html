@@ -118,7 +118,14 @@ if (x[i].innerHTML == '\u180d') {x[i].innerHTML = "<span class='highlight'>`</sp
 if (x[i].innerHTML == '\u180e') {x[i].innerHTML = "<span class='highlight'>_</span>";}
 if (x[i].innerHTML == '\u200c') {x[i].innerHTML = "<span class='highlight'>^</span>";}
 if (x[i].innerHTML == '\u200d') {x[i].innerHTML = "<span class='highlight'>*</span>";}
-if (x[i].innerHTML == '\u202f') {x[i].innerHTML = "<span class='highlight'>-</span>";}
+if (x[i].innerHTML == '\u202f') {
+if (langsel.value == 'mongol'){
+ {x[i].innerHTML = "<span class='highlight'>-</span>";}
+}
+if (langsel.value == 'manchu'){
+ {x[i].innerHTML = "<span class='highlight'>•</span>";}
+}
+}
 if (x[i].innerHTML == '︕') {x[i].innerHTML = "!";}
 if (x[i].innerHTML == '︖') {x[i].innerHTML = "?";}
 if (x[i].innerHTML == '︽') {x[i].innerHTML = "《";}
