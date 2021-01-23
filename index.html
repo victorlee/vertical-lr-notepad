@@ -209,7 +209,7 @@ background: #ddd;
   <span class="popup">
     language<br>
     <button onclick="selectmong()" style="font-family:Menk Garqag Tig;font-size: 1.5rem;">ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ</button>
-    <button onclick="selectman()" style="font-family:Mongolian Baiti;font-size: 1.3rem;">ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ</button>
+    <button onclick="selectman()" style="font-family:XM_BH;font-size: 1.3rem;">ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ</button>
   </span>
 </span>
 <div id="body" spellcheck="false" contenteditable="true"></div>
@@ -259,7 +259,6 @@ background: #ddd;
   <option value="Menk Sidam Tig">Menk Sidam Tig</option>
 </optgroup>
 <optgroup label="Manchu" id="manchufont" style="display:none">
-  <option value="Mongolian Baiti">Mongolian Baiti</option>
   <option value="XM_ZH">XM_ZhengHei</option>
   <option value="XM_ZB">XM_ZhengBai</option>
   <option value="XM_BH">XM_BiaoHei</option>
@@ -271,6 +270,7 @@ background: #ddd;
   <option value="XM_WQ">XM_WenQin</option>
   <option value="XM_XS">XM_XingShu</option>
   <option value="XM_YB">XM_YingBai</option>
+  <option value="Mongolian Baiti">Mongolian Baiti</option>
 </optgroup>
 </select>
 <select id="size" oninput="sizeChange()">
@@ -366,10 +366,10 @@ function fontSettings() {
             document.getElementById('manchufont').style.display = 'none';
             document.getElementById('font').value = 'Mongolian White';
         } else if (document.getElementById('lang').value === 'manchu') {
-            document.getElementById('body').style.fontFamily = 'Mongolian Baiti';
+            document.getElementById('body').style.fontFamily = 'XM_ZH';
             mongolfonts.style.display = 'none';
             document.getElementById('manchufont').style.display = 'block';
-            document.getElementById('font').value = 'Mongolian Baiti';
+            document.getElementById('font').value = 'XM_ZH';
         }
     }
 };
