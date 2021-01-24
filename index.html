@@ -303,15 +303,14 @@ background: #ddd;
 <button onclick='printdiv()'>print</button>
 </span>
 <script>
-var popup = document.getElementById('popup');
 function selectmong() {
   document.getElementById("lang").value = 'mongol';
-  popup.style.display = 'none';
+  document.getElementById('popup').style.display = 'none';
   fontSettings();
 }
 function selectman() {
-  popup.style.display = 'none';
   document.getElementById("lang").value = 'manchu';
+  document.getElementById('popup').style.display = 'none';
   fontSettings();
 }
 var manChar = /[\u185D-\u1877]/mg;
@@ -398,8 +397,7 @@ function printdiv() {
     "<html><head><title>file_name</title><style>body{@import url(https://victorlee.github.io/mongol-fonts/stylesheet.css); @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css); line-height:1.4; outline:none; border:none; cursor:text; writing-mode:vertical-lr; display:inline-block; font-size:" + document.getElementById('size').value + "; font-family:" + document.getElementById('font').value + ";} media @print{body{break-inside:avoid; display:table;}}</style></head><body>" + newstr + "</body></html>";
   window.print();
   document.body.innerHTML = oldstr;
-  document.getElementById('body').style.fontSize = "2.0rem";
-  fontSettings();
+  document.getElementById('popup').style.display = 'block';
 }
 </script>
 </body>
