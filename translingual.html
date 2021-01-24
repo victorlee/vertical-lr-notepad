@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Vertical-LR notepad for Mongolian and Manchu - translingual</title>
+<style>
+@import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
+div {
+    line-height: 1.4;
+    height: 95%;
+    min-width: 100%;
+    outline: none; 
+    border: none;
+    cursor: text;
+    writing-mode: vertical-lr;
+    display: inline-block;
+    font-size: 2.0rem;
+    font-family: mongolian baiti;
+}
+::selection {
+color: #000;
+background: #ddd;
+}
+.input {
+    position: fixed;
+    bottom: 4px;
+    right: 4px;
+    resize: none;
+}
+#loop {
+    position: fixed;
+    bottom: 0px;
+    padding-bottom:1px;
+    left: 4px;
+    resize: none;
+    max-width: 65%;
+    max-height: 4.5rem;
+    font-size: 1.3em; 
+    overflow: auto;
+    font-family: arial;
+    background: rgba(255,255,255,0.8);
+}
+.highlight {color: red;}
+</style>
+</head>
+<body>
+<div id="body" spellcheck="false" contenteditable="true"></div>
+<span class="input">
+<button onclick="window.location.href='';">back</button>
+<select id="size" oninput="sizeChange()">
+  <option value="1.0rem">1.0</option>
+  <option value="1.2rem">1.2</option>
+  <option value="1.4rem">1.4</option>
+  <option value="1.6rem">1.6</option>
+  <option value="1.8rem">1.8</option>
+  <option value="2.0rem" selected="selected">2.0</option>
+  <option value="2.2rem">2.2</option>
+  <option value="2.4rem">2.4</option>
+  <option value="2.6rem">2.6</option>
+  <option value="2.8rem">2.8</option>
+  <option value="3.0rem">3.0</option>
+  <option value="3.2rem">3.2</option>
+  <option value="3.4rem">3.4</option>
+  <option value="3.6rem">3.6</option>
+  <option value="3.8rem">3.8</option>
+  <option value="4.0rem">4.0</option>
+</select>
+</span>
+<script>
+(function() {
+    function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.documentElement.scrollLeft -= (delta*50);
+        document.body.scrollLeft -= (delta*50);
+        e.preventDefault();
+    }
+    if (window.addEventListener) {
+        window.addEventListener("mousewheel", scrollHorizontally, false);
+        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+        window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+})();
+function sizeChange() {
+  document.getElementById('body').style.fontSize = document.getElementById('size').value;
+}
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
+document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
+setInterval(function() {
+     localStorage['body-translingual'] = document.getElementById('body').innerHTML;
+});
+</script>
+</body>
+</html>
