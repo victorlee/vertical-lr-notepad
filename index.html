@@ -300,6 +300,7 @@ background: #ddd;
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
+<button onclick='printdiv()'>print</button>
 </span>
 <script>
 var popup = document.getElementById('popup');
@@ -389,6 +390,16 @@ window.getSelection().removeAllRanges();
 window.getSelection().addRange(range);
 document.execCommand("copy");
 window.getSelection().removeAllRanges();
+}
+function printdiv() {
+  var newstr = document.getElementById("body").innerHTML;
+  var oldstr = document.body.innerHTML;
+  document.body.innerHTML =
+    "<html><head><title>file_name</title><style>body{@import url(https://victorlee.github.io/mongol-fonts/stylesheet.css); @import url(https://victorlee.github.io/manchu-fonts/stylesheet.css); line-height:1.4; outline:none; border:none; cursor:text; writing-mode:vertical-lr; display:inline-block; font-size:" + document.getElementById('size').value + "; font-family:" + document.getElementById('font').value + ";} media @print{body{break-inside:avoid; display:table;}}</style></head><body>" + newstr + "</body></html>";
+  window.print();
+  document.body.innerHTML = oldstr;
+  document.getElementById('body').style.fontSize = "2.0rem";
+  fontSettings();
 }
 </script>
 </body>
