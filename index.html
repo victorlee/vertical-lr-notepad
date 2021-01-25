@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 setInterval(function change() {
+if (document.getElementById("check").checked == true){
 var txta = window.getSelection();
 document.getElementById('loop').innerHTML = txta;
 $('#loop').each(function (index) {
@@ -134,6 +135,7 @@ if (x[i].innerHTML == '︾') {x[i].innerHTML = "》";}
 if (x[i].innerHTML == '᠈') {x[i].innerHTML = ",";}
 if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 }
+}
 }, 100);
 </script>
 <style>
@@ -195,6 +197,7 @@ background: #ddd;
     bottom: 4px;
     right: 4px;
     resize: none;
+    font-family: arial;
 }
 #loop {
     position: fixed;
@@ -225,7 +228,8 @@ background: #ddd;
 <span class="loop">
 <span id="loop"></span>
 </span>
-<span class="input">
+<span class="input">translit.
+<input type="checkbox" id="check">
 <button onclick="copyloop()">copy translit.</button>
 <select id="lang" oninput="fontSettings()">
   <option value="mongol">Mongolian</option>
