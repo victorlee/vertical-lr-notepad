@@ -198,6 +198,7 @@ background: #ddd;
     right: 4px;
     resize: none;
     font-family: arial;
+    text-align: right;
 }
 #loop {
     position: fixed;
@@ -228,9 +229,10 @@ background: #ddd;
 <span class="loop">
 <span id="loop"></span>
 </span>
-<span class="input">translit.
-<input type="checkbox" id="check">
-<button onclick="copyloop()">copy translit.</button>
+<span class="input">
+<button onclick='printdiv()'>print</button><br>
+translit.<input type="checkbox" id="check">
+<button onclick="copyloop()">copy</button>
 <select id="lang" oninput="fontSettings()">
   <option value="mongol">Mongolian</option>
   <option value="manchu">Manchu</option>
@@ -304,7 +306,6 @@ background: #ddd;
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
-<button onclick='printdiv()'>print</button>
 </span>
 <script>
 function selectmong() {
