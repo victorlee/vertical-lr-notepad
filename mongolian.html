@@ -39,34 +39,13 @@ if (x[i].innerHTML == 'ᠰ') {x[i].innerHTML = "s";}
 if (x[i].innerHTML == 'ᠱ') {x[i].innerHTML = "š";}
 if (x[i].innerHTML == 'ᠲ') {x[i].innerHTML = "t";}
 if (x[i].innerHTML == 'ᠳ') {x[i].innerHTML = "d";}
-if (x[i].innerHTML == 'ᠴ') {
-if (langsel.value == 'mongol'){
- {x[i].innerHTML = "č";}
-}
-if (langsel.value == 'manchu'){
- {x[i].innerHTML = "c";}
-}
-}
-if (x[i].innerHTML == 'ᠵ') {
-if (langsel.value == 'mongol'){
- {x[i].innerHTML = "ǰ";}
-}
-if (langsel.value == 'manchu'){
- {x[i].innerHTML = "j";}
-}
-}
+if (x[i].innerHTML == 'ᠴ') {x[i].innerHTML = "č";}
+if (x[i].innerHTML == 'ᠵ') {x[i].innerHTML = "ǰ";}
 if (x[i].innerHTML == 'ᠶ') {x[i].innerHTML = "y";}
 if (x[i].innerHTML == 'ᠷ') {x[i].innerHTML = "r";}
 if (x[i].innerHTML == 'ᠸ') {x[i].innerHTML = "w";}
 if (x[i].innerHTML == 'ᠹ') {x[i].innerHTML = "f";}
-if (x[i].innerHTML == 'ᠺ') {
-if (langsel.value == 'mongol'){
- {x[i].innerHTML = "g";}
-}
-if (langsel.value == 'manchu'){
- {x[i].innerHTML = "k'";}
-}
-}
+if (x[i].innerHTML == 'ᠺ'){x[i].innerHTML = "g";}
 if (x[i].innerHTML == 'ᠻ') {x[i].innerHTML = "k";}
 if (x[i].innerHTML == 'ᠼ') {x[i].innerHTML = "c";}
 if (x[i].innerHTML == 'ᠽ') {x[i].innerHTML = "z";}
@@ -75,28 +54,6 @@ if (x[i].innerHTML == 'ᠿ') {x[i].innerHTML = "ž";}
 if (x[i].innerHTML == 'ᡀ') {x[i].innerHTML = "lh";}
 if (x[i].innerHTML == 'ᡁ') {x[i].innerHTML = "zh";}
 if (x[i].innerHTML == 'ᡂ') {x[i].innerHTML = "ch";}
-
-if (x[i].innerHTML == 'ᡝ') {x[i].innerHTML = "e";}
-if (x[i].innerHTML == 'ᡳ') {x[i].innerHTML = "i";}
-if (x[i].innerHTML == 'ᡟ') {x[i].innerHTML = "y";}
-if (x[i].innerHTML == 'ᡠ') {x[i].innerHTML = "u";}
-if (x[i].innerHTML == 'ᡡ') {x[i].innerHTML = "ū";}
-if (x[i].innerHTML == 'ᡴ') {x[i].innerHTML = "k";}
-if (x[i].innerHTML == 'ᡤ') {x[i].innerHTML = "g";}
-if (x[i].innerHTML == 'ᡥ') {x[i].innerHTML = "h";}
-if (x[i].innerHTML == 'ᡦ') {x[i].innerHTML = "p";}
-if (x[i].innerHTML == 'ᡧ') {x[i].innerHTML = "š";}
-if (x[i].innerHTML == 'ᡨ') {x[i].innerHTML = "t";}
-if (x[i].innerHTML == 'ᡩ') {x[i].innerHTML = "d";}
-if (x[i].innerHTML == 'ᡵ') {x[i].innerHTML = "r";}
-if (x[i].innerHTML == 'ᡶ') {x[i].innerHTML = "f";}
-if (x[i].innerHTML == 'ᡬ') {x[i].innerHTML = "g'";}
-if (x[i].innerHTML == 'ᡭ') {x[i].innerHTML = "h'";}
-if (x[i].innerHTML == 'ᡮ') {x[i].innerHTML = "ts'";}
-if (x[i].innerHTML == 'ᡯ') {x[i].innerHTML = "dz";}
-if (x[i].innerHTML == 'ᡰ') {x[i].innerHTML = "ž";}
-if (x[i].innerHTML == 'ᡱ') {x[i].innerHTML = "c'y";}
-if (x[i].innerHTML == 'ᡷ') {x[i].innerHTML = "j'y";}
 
 if (x[i].innerHTML == '᠐') {x[i].innerHTML = "0";}
 if (x[i].innerHTML == '᠑') {x[i].innerHTML = "1";}
@@ -119,64 +76,17 @@ if (x[i].innerHTML == '\u180d') {x[i].innerHTML = "<span class='highlight'>`</sp
 if (x[i].innerHTML == '\u180e') {x[i].innerHTML = "<span class='highlight'>_</span>";}
 if (x[i].innerHTML == '\u200c') {x[i].innerHTML = "<span class='highlight'>^</span>";}
 if (x[i].innerHTML == '\u200d') {x[i].innerHTML = "<span class='highlight'>*</span>";}
-if (x[i].innerHTML == '\u202f') {
-if (langsel.value == 'mongol'){
- {x[i].innerHTML = "<span class='highlight'>-</span>";}
-}
-if (langsel.value == 'manchu'){
- {x[i].innerHTML = "<span class='highlight'>•</span>";}
-}
-}
+if (x[i].innerHTML == '\u202f') {x[i].innerHTML = "<span class='highlight'>-</span>";}
 if (x[i].innerHTML == '︕') {x[i].innerHTML = "!";}
 if (x[i].innerHTML == '︖') {x[i].innerHTML = "?";}
 if (x[i].innerHTML == '︽') {x[i].innerHTML = "《";}
 if (x[i].innerHTML == '︾') {x[i].innerHTML = "》";}
-
-if (x[i].innerHTML == '᠈') {x[i].innerHTML = ",";}
-if (x[i].innerHTML == '᠉') {x[i].innerHTML = ".";}
 }
 }
 }, 100);
 </script>
 <style>
 @import url(https://victorlee.github.io/mongol-fonts/stylesheet.css);
-@import url(https://victorlee.github.io/manchu-fonts/stylesheet.css);
-#popup {
-  position:fixed;
-  padding:0;
-  margin:0;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  background:rgba(240,240,240,0.5);
-  z-index:1;
-}
-.popup {
-  position:fixed;
-  width:15rem;
-  height:7rem;
-  background-color: #fff;
-  padding:1rem;
-  border:5px solid #888;
-  margin: 10% auto;
-  left:0;
-  right:0;
-  text-align:center;
-  font-size: 1.4rem;
-  font-family: arial;
-  line-height: 1.8;
-}
-.popup>button {
-  font-family: arial;
-  background-color: #eef;
-  height: 2rem;
-  border: solid 2px #aaa;
-  writing-mode: vertical-lr;
-}
-.popup>button:hover {
-  background-color: #dde;
-}
 div {
     line-height: 1.4;
     height: 95%;
@@ -217,14 +127,6 @@ background: #ddd;
 </style>
 </head>
 <body>
-<span id="popup">
-  <span class="popup">
-    language<br>
-    <button onclick="selectmong()" style="font-family:Menk Garqag Tig;font-size: 1.5rem;">ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ</button>
-    <button onclick="selectman()" style="font-family:XM_BH;font-size: 1.3rem;">ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ</button>
-    <button onclick="window.location.href='translingual.html';" style="font-family:arial;font-size:1rem;">translingual</button>
-  </span>
-</span>
 <div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="loop">
 <span id="loop"></span>
@@ -232,10 +134,6 @@ background: #ddd;
 <span class="input">
 translit.<input type="checkbox" id="check">
 <button onclick="copyloop()">copy</button>
-<select id="lang" oninput="fontSettings()">
-  <option value="mongol">Mongolian</option>
-  <option value="manchu">Manchu</option>
-</select>
 <select id="font" oninput="fontChange()">
 <optgroup label="Serif" id="mongolfont1">
   <option value="Mongolian White">Mongolian White</option>
@@ -272,20 +170,6 @@ translit.<input type="checkbox" id="check">
   <option value="Menk Garqag Tig">Menk Garqag Tig</option>
   <option value="Menk Sidam Tig">Menk Sidam Tig</option>
 </optgroup>
-<optgroup label="Manchu" id="manchufont" style="display:none">
-  <option value="XM_ZH">XM_ZhengHei</option>
-  <option value="XM_ZB">XM_ZhengBai</option>
-  <option value="XM_BH">XM_BiaoHei</option>
-  <option value="XM_GF">XM_GuFeng</option>
-  <option value="XM_AB">XM_YaBai</option>
-  <option value="XM_LY">XM_LiuYe</option>
-  <option value="XM_WJ">XM_WenJian</option>
-  <option value="XM_SK">XM_ShuKa</option>
-  <option value="XM_WQ">XM_WenQin</option>
-  <option value="XM_XS">XM_XingShu</option>
-  <option value="XM_YB">XM_YingBai</option>
-  <option value="Mongolian Baiti">Mongolian Baiti</option>
-</optgroup>
 </select>
 <select id="size" oninput="sizeChange()">
   <option value="1.0rem">1.0</option>
@@ -313,38 +197,6 @@ translit.<input type="checkbox" id="check">
 <button onclick='printdiv()'>print</button>
 </span>
 <script>
-function selectmong() {
-  document.getElementById("lang").value = 'mongol';
-  document.getElementById('popup').style.display = 'none';
-  fontSettings();
-}
-function selectman() {
-  document.getElementById("lang").value = 'manchu';
-  document.getElementById('popup').style.display = 'none';
-  fontSettings();
-}
-var manChar = /[\u185D-\u1877]/mg;
-$(document).ready(function(){
-    $('#body').keyup(function(){
-        var isMan = this.innerHTML.match(manChar);
-        if(isMan !== null) {
-            if(document.getElementById('lang').value == 'mongol') {
-                alert("Current language mode is 'Mongolian'. You have (previously) entered a Manchu alphabet, please change the language setting below or clear the text.");
-             }
-         }
-    });
-});
-var monChar = /[\u1821-\u1822]|[\u1824-\u1827]|[\u182B-\u182D]|[\u1831-\u1833]|[\u1837]|[\u1839]|[\u183B-\u1842]/mg;
-$(document).ready(function(){
-    $('#body').keyup(function(){
-        var isMan = this.innerHTML.match(monChar);
-        if(isMan !== null) {
-            if(document.getElementById('lang').value == 'manchu') {
-                alert("Current language mode is 'Manchu'. You have (previously) entered a Mongolian alphabet, please change the language setting below or clear the text.");
-             }
-         }
-    });
-});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
@@ -372,26 +224,10 @@ ce.addEventListener('paste', function (e) {
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
-document.getElementById('body').innerHTML = localStorage['body'] || '';
+document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
 setInterval(function() {
      localStorage['body'] = document.getElementById('body').innerHTML;
 });
-function fontSettings() {
-    for(var i=1; i<=4; i++){
-        var mongolfonts = document.getElementById("mongolfont" + i);
-        if (document.getElementById('lang').value === 'mongol') {
-            document.getElementById('body').style.fontFamily = 'Mongolian White';
-            mongolfonts.style.display = 'block';
-            document.getElementById('manchufont').style.display = 'none';
-            document.getElementById('font').value = 'Mongolian White';
-        } else if (document.getElementById('lang').value === 'manchu') {
-            document.getElementById('body').style.fontFamily = 'XM_ZH';
-            mongolfonts.style.display = 'none';
-            document.getElementById('manchufont').style.display = 'block';
-            document.getElementById('font').value = 'XM_ZH';
-        }
-    }
-};
 function copyloop() {
 var range = document.createRange();
 range.selectNode(document.getElementById("loop"));
