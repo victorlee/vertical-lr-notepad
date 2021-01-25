@@ -226,7 +226,7 @@ ce.addEventListener('paste', function (e) {
 })
 document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
 setInterval(function() {
-     localStorage['body'] = document.getElementById('body').innerHTML;
+     localStorage['body-mon'] = document.getElementById('body').innerHTML;
 });
 function copyloop() {
 var range = document.createRange();
