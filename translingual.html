@@ -71,6 +71,10 @@ ce.addEventListener('paste', function (e) {
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
+document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
+setInterval(function() {
+     localStorage['body-translingual'] = document.getElementById('body').innerHTML;
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
@@ -89,10 +93,6 @@ ce.addEventListener('paste', function (e) {
 function sizeChange() {
   document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
-document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
-setInterval(function() {
-     localStorage['body-translingual'] = document.getElementById('body').innerHTML;
-});
 </script>
 </body>
 </html>
