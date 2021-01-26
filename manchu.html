@@ -173,6 +173,10 @@ ce.addEventListener('paste', function (e) {
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
+document.getElementById('body').innerHTML = localStorage['body-man'] || '';
+setInterval(function() {
+     localStorage['body-man'] = document.getElementById('body').innerHTML;
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
@@ -194,10 +198,6 @@ function fontChange() {
 function sizeChange() {
   document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
-document.getElementById('body').innerHTML = localStorage['body-man'] || '';
-setInterval(function() {
-     localStorage['body-man'] = document.getElementById('body').innerHTML;
-});
 function copyloop() {
 var range = document.createRange();
 range.selectNode(document.getElementById("loop"));
