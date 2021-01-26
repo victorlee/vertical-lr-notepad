@@ -167,6 +167,12 @@ translit.<input type="checkbox" id="check">
 <button onclick="window.location.href='index.html';">index</button>
 </span>
 <script>
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
@@ -188,12 +194,6 @@ function fontChange() {
 function sizeChange() {
   document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
-var ce = document.querySelector('[contenteditable]')
-ce.addEventListener('paste', function (e) {
-  e.preventDefault()
-  var text = e.clipboardData.getData('text/plain')
-  document.execCommand('insertText', false, text)
-})
 document.getElementById('body').innerHTML = localStorage['body-man'] || '';
 setInterval(function() {
      localStorage['body-man'] = document.getElementById('body').innerHTML;
