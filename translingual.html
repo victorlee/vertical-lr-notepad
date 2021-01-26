@@ -65,16 +65,16 @@ background: #ddd;
 <button onclick="window.location.href='index.html';">index</button>
 </span>
 <script>
-document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
-setInterval(function() {
-     localStorage['body-translingual'] = document.getElementById('body').innerHTML;
-});
 var ce = document.querySelector('[contenteditable]')
 ce.addEventListener('paste', function (e) {
   e.preventDefault()
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
+document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
+setInterval(function() {
+     localStorage['body-translingual'] = document.getElementById('body').innerHTML;
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
