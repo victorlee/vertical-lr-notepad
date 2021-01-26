@@ -171,6 +171,12 @@ document.getElementById('body').innerHTML = localStorage['body-man'] || '';
 setInterval(function() {
      localStorage['body-man'] = document.getElementById('body').innerHTML;
 });
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
 $('#body').live('focus', function() {
     var $this = $(this);
     $this.data('before', $this.html());
