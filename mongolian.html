@@ -203,7 +203,7 @@ document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
 setInterval(function() {
      localStorage['body-mon'] = document.getElementById('body').innerHTML;
 });
-$('[contenteditable]').live('focus', function() {
+$('#body').live('focus', function() {
     var $this = $(this);
     $this.data('before', $this.html());
     return $this;
@@ -215,7 +215,7 @@ $('[contenteditable]').live('focus', function() {
     }
     return $this;
 });
-$('[contenteditable]').live('change', function() {
+$('#body').live('change', function() {
     $(this).html($(this).text());
     alert('changed');
 });
