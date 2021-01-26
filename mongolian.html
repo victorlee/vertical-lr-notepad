@@ -199,16 +199,16 @@ translit.<input type="checkbox" id="check">
 <button onclick="window.location.href='index.html';">index</button>
 </span>
 <script>
-document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
-setInterval(function() {
-     localStorage['body-mon'] = document.getElementById('body').innerHTML;
-});
 var ce = document.querySelector('[contenteditable]')
 ce.addEventListener('paste', function (e) {
   e.preventDefault()
   var text = e.clipboardData.getData('text/plain')
   document.execCommand('insertText', false, text)
 })
+document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
+setInterval(function() {
+     localStorage['body-mon'] = document.getElementById('body').innerHTML;
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
