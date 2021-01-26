@@ -203,22 +203,12 @@ document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
 setInterval(function() {
      localStorage['body-mon'] = document.getElementById('body').innerHTML;
 });
-$('#body').live('focus', function() {
-    var $this = $(this);
-    $this.data('before', $this.html());
-    return $this;
-}).live('blur keyup paste', function() {
-    var $this = $(this);
-    if ($this.data('before') !== $this.html()) {
-        $this.data('before', $this.html());
-        $this.trigger('change');
-    }
-    return $this;
-});
-$('#body').live('change', function() {
-    $(this).html($(this).text());
-    alert('changed');
-});
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
