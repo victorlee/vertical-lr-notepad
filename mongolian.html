@@ -199,6 +199,10 @@ translit.<input type="checkbox" id="check">
 <button onclick="window.location.href='index.html';">index</button>
 </span>
 <script>
+document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
+setInterval(function() {
+     localStorage['body-mon'] = document.getElementById('body').innerHTML;
+});
 var ce = document.querySelector('[contenteditable]')
 ce.addEventListener('paste', function (e) {
   e.preventDefault()
@@ -226,10 +230,6 @@ function fontChange() {
 function sizeChange() {
   document.getElementById('body').style.fontSize = document.getElementById('size').value;
 }
-document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
-setInterval(function() {
-     localStorage['body-mon'] = document.getElementById('body').innerHTML;
-});
 function copyloop() {
 var range = document.createRange();
 range.selectNode(document.getElementById("loop"));
