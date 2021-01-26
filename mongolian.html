@@ -215,6 +215,10 @@ $('[contenteditable]').live('focus', function() {
     }
     return $this;
 });
+$('.editableContent').live('change', function() {
+    $(this).html($(this).text());
+    alert('changed');
+});
 (function() {
     function scrollHorizontally(e) {
         e = window.event || e;
