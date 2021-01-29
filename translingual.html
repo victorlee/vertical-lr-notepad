@@ -87,7 +87,7 @@ background: #ddd;
     <button onclick="document.getElementById('popup').style.display = 'none'" style="font-family:arial;font-size:1rem;">translingual</button>
   </span>
 </span>
-<div id="body" spellcheck="false" contenteditable="plaintext-only"></div>
+<div id="body" spellcheck="false" contenteditable="true"></div>
 <span class="input">
 <select id="size" oninput="sizeChange()">
   <option value="1.0rem">1.0</option>
@@ -110,6 +110,12 @@ background: #ddd;
 <button onclick="document.getElementById('popup').style.display = 'block'">language</button>
 </span>
 <script>
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
 document.getElementById('body').innerHTML = localStorage['body-translingual'] || '';
 setInterval(function() {
      localStorage['body-translingual'] = document.getElementById('body').innerHTML;
