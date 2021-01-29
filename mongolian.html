@@ -174,7 +174,7 @@ background: #ddd;
     <button onclick="window.location.href='translingual.html'" style="font-family:arial;font-size:1rem;">translingual</button>
   </span>
 </span>
-<div id="body" spellcheck="false" contenteditable="true"></div>
+<div id="body" spellcheck="false" contenteditable="plaintext-only"></div>
 <span class="loop">
 <span id="loop"></span>
 </span>
@@ -245,12 +245,6 @@ translit.<input type="checkbox" id="check">
 <button onclick="document.getElementById('popup').style.display = 'block'">index</button>
 </span>
 <script>
-var ce = document.querySelector('[contenteditable]')
-ce.addEventListener('paste', function (e) {
-  e.preventDefault()
-  var text = e.clipboardData.getData('text/plain')
-  document.execCommand('insertText', false, text)
-})
 document.getElementById('body').innerHTML = localStorage['body-mon'] || '';
 setInterval(function() {
      localStorage['body-mon'] = document.getElementById('body').innerHTML;
