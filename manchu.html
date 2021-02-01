@@ -254,12 +254,13 @@ window.getSelection().removeAllRanges();
 }
 function addrmv(){
 var tx = document.getElementById('body');
-  currentvalue = document.getElementById('offon').value;
+ currentvalue = document.getElementById('offon').value;
   if(currentvalue == "add space before -i"){
     document.getElementById("offon").value="rmv space before -i";
-    tx.innerHTML = tx.innerHTML.replaceAll(' ᡳ', '  ᡳ');
-  }else{
+    tx.innerHTML = tx.innerHTML.replaceAll('\u202F\u1873', '\u0020\u202F\u1873');
+  } else {
     document.getElementById("offon").value="add space before -i";
+    tx.innerHTML = tx.innerHTML.replaceAll('\u0020\u202F\u1873', '\u202F\u1873');
     tx.innerHTML = tx.innerHTML.replaceAll('\u0020\u202F\u1873', '\u202F\u1873');
   }
 }
