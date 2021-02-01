@@ -145,7 +145,7 @@ background: #ddd;
     padding-bottom:1px;
     left: 4px;
     resize: none;
-    max-width: 65%;
+    max-width: 60%;
     max-height: 4.5rem;
     font-size: 1.3em; 
     overflow: auto;
@@ -208,6 +208,7 @@ translit.<input type="checkbox" id="check">
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
+<input type="button" value="add space before -i" id="offon" onclick="addrmv();">
 <button onclick='printdiv()'>print</button>
 <button onclick="document.getElementById('popup').style.display = 'block'">language</button>
 </span>
@@ -250,6 +251,17 @@ window.getSelection().removeAllRanges();
 window.getSelection().addRange(range);
 document.execCommand("copy");
 window.getSelection().removeAllRanges();
+}
+function addrmv(){
+var tx = document.getElementById('body');
+  currentvalue = document.getElementById('offon').value;
+  if(currentvalue == "add space before -i"){
+    document.getElementById("offon").value="rmv space before -i";
+    tx.textContent = tx.textContent.replaceAll('\u202F\u1873', '\u0020\u202F\u1873');
+  }else{
+    document.getElementById("offon").value="add space before -i";
+    tx.textContent = tx.textContent.replaceAll('\u0020\u202F\u1873', '\u202F\u1873');
+  }
 }
 function printdiv() {
   var newstr = document.getElementById("body").innerHTML;
