@@ -240,7 +240,7 @@ translit.<input type="checkbox" id="check">
   <option value="3.8rem">3.8</option>
   <option value="4.0rem">4.0</option>
 </select>
-<input type="button" value="fix ?,!" id="offon" onclick="fixmark();">
+<input type="button" value="turn ?,!" id="offon" onclick="fixmark();">
 <button onclick='printdiv()'>print</button>
 <button onclick="document.getElementById('popup').style.display = 'block'">language</button>
 </span>
@@ -287,12 +287,12 @@ window.getSelection().removeAllRanges();
 function fixmark(){
 var tx = document.getElementById('body');
  currentvalue = document.getElementById('offon').value;
-  if(currentvalue == "fix ?,!"){
+  if(currentvalue == "turn ?,!"){
     document.getElementById("offon").value="undo";
     tx.innerHTML = tx.innerHTML.replaceAll("︖", "<span style='writing-mode:horizontal-tb'>?‍</span>");
     tx.innerHTML = tx.innerHTML.replaceAll("︕", "<span style='writing-mode:horizontal-tb'>!‍</span>");
   } else {
-    document.getElementById("offon").value="fix ?,!";
+    document.getElementById("offon").value="turn ?,!";
     tx.innerHTML = tx.innerHTML.replaceAll("?‍", "︖");
     tx.innerHTML = tx.innerHTML.replaceAll("!‍", "︕");
   }
